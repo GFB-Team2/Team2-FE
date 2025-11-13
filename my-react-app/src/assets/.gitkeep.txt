@@ -1,0 +1,1 @@
+필요한 asset를 모아놓는 곳 (ex ) SVG, PNG)
