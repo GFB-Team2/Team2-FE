@@ -8,7 +8,7 @@
   border-radius: 20px;
   padding: 40px;
   box-sizing: border-box;
-
+  height: 480px;
   display: flex;
   flex-direction: column;
 }
@@ -18,7 +18,7 @@
   font-weight: 600;
   font-size: 24px;
   color: #191817;
-  margin: 0;
+  margin-top: -10px;
 }
 
 .subtitle {
@@ -27,13 +27,15 @@
   font-size: 16px;
   color: #7f7f7f;
   margin-top: 10px;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
 }
 
 .form {
   display: flex;
   flex-direction: column;
   gap: 16px;
+  margin-top: -10px;
+  margin-bottom: 20px;
 }
 
 .label {
@@ -49,7 +51,7 @@
 }
 
 .signupLink {
-  margin-top: 10px;
+  margin-top: auto;
   text-align: center;
   font-family: 'Pretendard';
   font-weight: 400;
