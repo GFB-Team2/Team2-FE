@@ -1,35 +1,24 @@
-import { useState } from 'react';
-import reactLogo from './assets/react.svg';
-import viteLogo from '/vite.svg';
-import './App.css';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import LoginPage from '@/pages/LoginPage/LoginPage';
+// import SignupPage from '@/pages/SignupPage/SignupPage'; // (참고) 나중에 회원가입 페이지
 
 function App() {
-  const [count, setCount] = useState(0);
-  const testPrettier = 'hello world';
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    // (1) 라우터(페이지 이동 관리자)를 시작합니다.
+    <BrowserRouter>
+      {/* (2) URL 주소에 따라 보여줄 페이지를 결정합니다. */}
+      <Routes>
+        {/* (3) ⭐️ 핵심:
+          path="/" (웹사이트 기본 주소)로 접속하면
+          element={<LoginPage />} (LoginPage 컴포넌트)를 보여줍니다.
+        */}
+        <Route path="/" element={<LoginPage />} />
+
+        {/* (4) (참고) 나중에 다른 페이지들을 이렇게 추가할 수 있습니다.
+          <Route path="/signup" element={<SignupPage />} />
+        */}
+      </Routes>
+    </BrowserRouter>
   );
 }
 

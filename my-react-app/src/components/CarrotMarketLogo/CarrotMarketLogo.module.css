@@ -1,0 +1,18 @@
+.logoContainer {
+  display: flex;
+  align-items: flex-end;
+  gap: 7px;
+}
+
+.logoImage {
+  width: 57px;
+  height: 57px;
+}
+
+.logoText {
+  font-family: 'Pretendard';
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 57px;
+  color: #ff8010;
+}
