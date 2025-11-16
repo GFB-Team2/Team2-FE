@@ -35,7 +35,7 @@
   flex-direction: column;
   gap: 16px;
   margin-top: -10px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .label {
@@ -52,6 +52,7 @@
 
 .signupLink {
   margin-top: auto;
+  margin-bottom: 16px;
   text-align: center;
   font-family: 'Pretendard';
   font-weight: 400;

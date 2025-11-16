@@ -16,3 +16,13 @@
   line-height: 57px;
   color: #ff8010;
 }
+
+.small .logoImage{
+    width: 44px;
+    height: 44px;
+}
+
+.small .logoText{
+    font-size: 36px;
+    line-height: 44px;
+}

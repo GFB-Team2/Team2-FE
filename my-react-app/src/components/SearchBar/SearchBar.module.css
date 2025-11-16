@@ -1,0 +1,50 @@
+/* Figma의 'Frame 5' 스타일 */
+.searchBar {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 690px;
+  height: 50px; /* 높이 통일 */
+
+  background: #ffffff;
+  border: 1px solid #000000;
+  border-radius: 37px;
+  padding: 0 10px 0 20px;
+}
+
+/* Figma의 'Frame 6' 스타일 */
+.category {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding-right: 15px;
+  border-right: 1px solid #000000;
+
+  font-family: 'Pretendard';
+  font-weight: 500;
+  font-size: 20px;
+  color: #000000;
+  cursor: pointer;
+}
+
+.input {
+  flex-grow: 1; /* 남는 공간 모두 차지 */
+  border: none;
+  outline: none;
+  padding: 0 15px;
+
+  font-family: 'Pretendard';
+  font-weight: 500;
+  font-size: 18px;
+}
+.input::placeholder {
+  color: #999999;
+}
+
+.searchButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+  color: #333333;
+}

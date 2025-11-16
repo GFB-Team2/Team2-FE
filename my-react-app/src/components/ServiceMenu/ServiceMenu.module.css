@@ -1,0 +1,49 @@
+/* Figma의 'Frame 20' / 'Frame 23' */
+.menuContainer {
+  width: 100%;
+  max-width: 1046px; /* Figma 너비 */
+  margin: 0 auto; /* 중앙 정렬 */
+  padding: 25px 0;
+
+  /* ⭐️ 7개 아이템을 Grid로 정렬 */
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 20px; /* Figma의 152-134=18px와 비슷하게 */
+}
+
+/* Figma의 'Frame 21' (아이템 1개) */
+.menuItem {
+  width: 100%;
+  height: 144px; /* Figma 높이 */
+  background: #f4f4f4; /* Figma의 rgba(229, ...) */
+  border-radius: 17px;
+  border: none;
+  cursor: pointer;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Figma는 왼쪽 정렬 */
+  justify-content: space-between; /* 아이콘은 위, 텍스트는 아래 */
+  padding: 26px 16px;
+  box-sizing: border-box;
+}
+
+.menuItem:hover {
+  background: #eaeaea;
+}
+
+.iconPlaceholder {
+  /* 아이콘 대신 임시 텍스트 */
+  font-size: 12px;
+  font-weight: 700;
+  color: #333;
+}
+
+/* Figma의 '중고거래' (텍스트) */
+.label {
+  font-family: 'Pretendard';
+  font-weight: 700;
+  font-size: 24px; /* Figma의 27px는 너무 커서 조절 */
+  line-height: 33px;
+  color: #000000;
+}

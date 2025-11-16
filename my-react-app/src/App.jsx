@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import LoginPage from '@/pages/LoginPage/LoginPage';
-import SignUpPage from '@/pages/SignUpPage/SignUpPage'; // (참고) 나중에 회원가입 페이지
+import SignUpPage from '@/pages/SignUpPage/SignUpPage';
+import MainPage from '@/pages/MainPage/MainPage.jsx'; // (참고) 나중에 회원가입 페이지
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
       <Routes>
         <Route path="/login" element={<LoginPage />} />
         <Route path="/signup" element={<SignUpPage />} />
+        <Route path="/" element={<MainPage />} />
       </Routes>
     </BrowserRouter>
   );
