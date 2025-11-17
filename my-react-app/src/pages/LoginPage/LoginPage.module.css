@@ -1,0 +1,74 @@
+.loginBox {
+  width: 100%;
+  max-width: 466px;
+
+  background: #fffefe;
+  border: 1px solid #dddddd;
+  box-shadow: 1px 4px 4px #eaeaea;
+  border-radius: 20px;
+  padding: 40px;
+  box-sizing: border-box;
+  height: 480px;
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  font-family: 'Pretendard';
+  font-weight: 600;
+  font-size: 24px;
+  color: #191817;
+  margin-top: -10px;
+}
+
+.subtitle {
+  font-family: 'Pretendard';
+  font-weight: 600;
+  font-size: 16px;
+  color: #7f7f7f;
+  margin-top: 10px;
+  margin-bottom: 40px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: -10px;
+  margin-bottom: 10px;
+}
+
+.label {
+  font-family: 'Pretendard';
+  font-weight: 600;
+  font-size: 20px;
+  color: #404040;
+  margin-bottom: -8px;
+}
+
+.buttonWrapper {
+  padding-top: 30px;
+}
+
+.signupLink {
+  margin-top: auto;
+  margin-bottom: 16px;
+  text-align: center;
+  font-family: 'Pretendard';
+  font-weight: 400;
+  font-size: 16px;
+  color: #404040;
+}
+
+.link {
+  font-family: 'Pretendard';
+  font-weight: 600;
+  font-size: 17px;
+  color: #ff8010;
+  text-decoration: none;
+  margin-left: 6px;
+}
+
+.link:hover {
+  text-decoration: underline;
+}

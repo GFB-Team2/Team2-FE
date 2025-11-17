@@ -1,0 +1,31 @@
+/* Figma의 'Frame 40' 스타일 */
+.keywordsContainer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.title {
+  font-family: 'Pretendard';
+  font-weight: 300;
+  font-size: 15px;
+  color: #000000;
+}
+
+.keywordsList {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.keyword {
+  font-family: 'Pretendard';
+  font-weight: 500;
+  font-size: 15px;
+  color: #000000;
+  text-decoration: none;
+}
+
+.keyword:hover {
+  text-decoration: underline;
+}

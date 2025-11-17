@@ -1,0 +1,22 @@
+/* Figma의 'Frame 4' 스타일 */
+.locationButton {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 15px;
+  height: 50px; /* 검색창과 높이 맞춤 */
+
+  background: #1d1b1b;
+  border-radius: 56px; /* 아주 둥글게 */
+  border: none;
+  cursor: pointer;
+
+  font-family: 'Pretendard';
+  font-weight: 500;
+  font-size: 20px;
+  color: #ffffff;
+}
+
+.icon {
+  font-size: 20px;
+}
