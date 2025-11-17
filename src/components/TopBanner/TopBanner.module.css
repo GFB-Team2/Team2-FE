@@ -1,0 +1,26 @@
+.topBanner {
+  width: 100%;
+  height: 85px;
+  background: #ffffff;
+  border-bottom: 1px solid #eaeaea;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contentWrapper {
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 20px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.buttonWrapper {
+  width: 161px;
+  height: 52px;
+  display: flex;
+}

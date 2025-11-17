@@ -1,0 +1,18 @@
+.pageContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  /* Figma의 `background: #FFFFFF;` */
+  background: #ffffff;
+}
+
+.mainContent {
+  width: 100%;
+  /* Figma의 `background: #FEFEFE;` (거의 흰색) */
+  background: #fafafa; /* 구분을 위해 살짝 더 어둡게 */
+  padding: 40px 0;
+
+  display: flex;
+  flex-direction: column;
+  gap: 30px; /* ServiceMenu와 NeighborhoodMenu 사이 간격 */
+}

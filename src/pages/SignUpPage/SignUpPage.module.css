@@ -1,0 +1,41 @@
+.signupBox {
+  width: 100%;
+  max-width: 466px;
+
+  background: #fffefe;
+  border: 1px solid #dddddd;
+  box-shadow: 1px 4px 4px #eaeaea;
+  border-radius: 20px;
+  padding: 40px;
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  font-family: 'Pretendard';
+  font-weight: 600;
+  font-size: 24px;
+  color: #191817;
+  margin: 0;
+  margin-bottom: 30px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.label {
+  font-family: 'Pretendard';
+  font-weight: 600;
+  font-size: 20px;
+  color: #404040;
+  margin-bottom: -8px;
+}
+
+.buttonWrapper {
+  padding-top: 14px;
+}
