@@ -23,12 +23,12 @@ function PopularKeywords() {
   // 검색 페이지라면 연관 검색어 생성
   const related = keyword
     ? [
-      `${keyword} 청소`,
-      `${keyword} 설치`,
-      `${keyword} 이전설치`,
-      `${keyword} 중고`,
-      `${keyword} 부품`,
-    ]
+        `${keyword} 청소`,
+        `${keyword} 설치`,
+        `${keyword} 이전설치`,
+        `${keyword} 중고`,
+        `${keyword} 부품`,
+      ]
     : [];
 
   return (

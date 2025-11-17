@@ -7,7 +7,7 @@ import SearchHeader from '@/components/SearchHeader/SearchHeader.jsx';
 import SearchFilterSidebar from '@/components/SearchFilterSidebar/SearchFilterSidebar.jsx';
 import ItemGrid from '@/components/ItemGrid/ItemGrid.jsx';
 
-import { mockItems } from '@/data/mockItems';
+import { mockSearchItems } from '@/data/mockSearchItems';
 
 function SearchResultPage() {
   const { keyword } = useParams();
@@ -24,7 +24,7 @@ function SearchResultPage() {
   }, []);
 
   const loadMore = () => {
-    const next = mockItems.slice(0, page * BATCH_SIZE);
+    const next = mockSearchItems.slice(0, page * BATCH_SIZE);
     setItems(next);
     setPage((prev) => prev + 1);
   };
