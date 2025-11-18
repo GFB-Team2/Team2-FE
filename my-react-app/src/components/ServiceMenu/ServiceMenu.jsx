@@ -9,20 +9,24 @@ import dongnaeseng from '@/assets/images/dongnaeseng.svg';
 import moim from '@/assets/images/moim.svg';
 
 const services = [
-  { id: 1, label: '중고거래', icon: jungogeore},
-  { id: 2, label: '알바' , icon: alba},
+  { id: 1, label: '중고거래', icon: jungogeore },
+  { id: 2, label: '알바', icon: alba },
   { id: 3, label: '부동산', icon: budongsan },
-  { id: 4, label: '중고차', icon: jungocar},
-  { id: 5, label: '동네업체' , icon: dongnaeupchae},
-  { id: 6, label: '동네생활' , icon: dongnaeseng},
-  { id: 7, label: '모임' , icon: moim},
+  { id: 4, label: '중고차', icon: jungocar },
+  { id: 5, label: '동네업체', icon: dongnaeupchae },
+  { id: 6, label: '동네생활', icon: dongnaeseng },
+  { id: 7, label: '모임', icon: moim },
 ];
 
 function ServiceMenu() {
   return (
     <div className={styles.menuContainer}>
       {services.map((service) => (
-        <ServiceMenuItem key={service.id} label={service.label} icon={service.icon} />
+        <ServiceMenuItem
+          key={service.id}
+          label={service.label}
+          icon={service.icon}
+        />
       ))}
     </div>
   );

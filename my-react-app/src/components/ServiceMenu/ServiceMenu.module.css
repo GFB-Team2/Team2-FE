@@ -15,7 +15,7 @@
 .menuItem {
   width: 100%;
   height: 144px; /* Figma 높이 */
-  background: #E5E5E5; /* Figma의 rgba(229, ...) */
+  background: #e5e5e5; /* Figma의 rgba(229, ...) */
   border-radius: 17px;
   border: none;
   cursor: pointer;
@@ -48,17 +48,17 @@
   color: #000000;
 }
 
-.iconPlaceholder{
-    width: 28px;
-    height: 28px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 42px;
+.iconPlaceholder {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 42px;
 }
 
-.iconImage{
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
+.iconImage {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
