@@ -25,6 +25,7 @@ export const mockItems = [
         price: '25,000원',
         image: 'https://picsum.photos/id/1027/400/300',
         location: '길음동',
+        time: '3시간 전',
       },
       {
         id: 3,
@@ -32,6 +33,7 @@ export const mockItems = [
         price: '7,000원',
         image: 'https://picsum.photos/id/1032/400/300',
         location: '길음동',
+        time: '1시간 전',
       },
       {
         id: 4,
@@ -39,6 +41,7 @@ export const mockItems = [
         price: '40,000원',
         image: 'https://picsum.photos/id/1044/400/300',
         location: '길음동',
+        time: '50분 전',
       },
     ],
   },

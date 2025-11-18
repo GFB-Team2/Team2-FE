@@ -23,6 +23,6 @@ export const mockSearchItems = Array.from({ length: 40 }).map((_, index) => ({
   title: `삼성 에어컨 모델 ${index + 1}`,
   price: `${10 + index}만원`,
   image: `https://picsum.photos/seed/search${index}/400/300`,
-  location: ["길음동", "정릉동", "종암동"][index % 3],
+  location: ['길음동', '정릉동', '종암동'][index % 3],
   time: getRandomTime(), // ← 여기서 자동 생성됨!
 }));
