@@ -18,7 +18,6 @@ function SearchResultPage() {
 
   const BATCH_SIZE = 100;
 
-  // 초기 로딩
   useEffect(() => {
     loadMore();
   }, []);
@@ -41,7 +40,11 @@ function SearchResultPage() {
   return (
     <div className={styles.pageWrapper}>
       <TopBanner />
-      <SearchHeader />
+
+      {/* ⭐ 검색 페이지에서만 SearchHeader 레이아웃 적용하는 래퍼 */}
+      <div className={styles.searchHeaderArea}>
+        <SearchHeader />
+      </div>
 
       <div className={styles.layout}>
         <SearchFilterSidebar />

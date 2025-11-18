@@ -1,6 +1,6 @@
 .pageWrapper {
   width: 100%;
-  background: #ffffff; /* 라이트 모드 */
+  background: #ffffff;
   min-height: 100vh;
 }
 
@@ -22,9 +22,30 @@
 .title {
   font-size: 22px;
   font-weight: 700;
-  color: #000; /* 검정 글씨 */
+  color: #000;
 }
 
 .observer {
   height: 50px;
+}
+
+/* 🔥🔥🔥 여기서부터 새로 추가 (검색 결과 페이지에서만 SearchHeader 정렬) */
+
+/* SearchHeader 전체 영역을 로고와 같은 기준(max-width:1200px)으로 정렬 */
+.searchHeaderArea {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+
+  display: flex;
+  justify-content: flex-start; /* 로고 기준 왼쪽 정렬 */
+  align-items: center;
+}
+
+/* 내부의 SearchHeader 요소들이 전체 너비로 확장되도록 강제 */
+.searchHeaderArea > div {
+  width: 100%;
+  display: flex;
+  gap: 16px;
 }
