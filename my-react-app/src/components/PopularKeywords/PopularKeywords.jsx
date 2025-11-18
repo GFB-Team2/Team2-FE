@@ -12,6 +12,11 @@ const popular = [
   '투표',
   '난방',
   '냉장고',
+    '컴퓨터',
+    '게임',
+    '청소기',
+    '패트',
+    '매트'
 ];
 
 function PopularKeywords() {
