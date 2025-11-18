@@ -1,0 +1,56 @@
+.page {
+  background: #ffffff;
+}
+
+.breadcrumb {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #777;
+}
+
+.mainSection {
+  display: flex;
+  gap: 40px;
+  margin-top: 20px;
+}
+
+.infoSection {
+  flex: 1;
+}
+
+.title {
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.meta {
+  margin-top: 6px;
+  font-size: 14px;
+  color: #777;
+}
+
+.price {
+  font-size: 22px;
+  font-weight: 700;
+  margin: 20px 0 10px;
+  color: #ff7800;
+}
+
+.description {
+  margin-top: 10px;
+  line-height: 1.5;
+  color: #222;
+}
+
+.appButton {
+  margin-top: 20px;
+  width: 100%;
+  padding: 14px 0;
+  background-color: #ff7800;
+  color: white;
+  font-weight: 700;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 18px;
+}
