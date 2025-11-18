@@ -1,0 +1,9 @@
+.slider {
+  width: 55%;
+}
+
+.mainImage {
+  width: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+}

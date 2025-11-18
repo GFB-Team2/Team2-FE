@@ -19,11 +19,8 @@
   align-items: center;
 }
 
-.buttonWrapper{
-    width: 161px;
-    height: 52px;
-    display: flex;
-
+.buttonWrapper {
+  width: 161px;
+  height: 52px;
+  display: flex;
 }
-
-
