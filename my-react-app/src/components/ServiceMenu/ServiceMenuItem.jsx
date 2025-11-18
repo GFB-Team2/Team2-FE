@@ -1,9 +1,11 @@
 import styles from './ServiceMenu.module.css';
 
-function ServiceMenuItem({ label }) {
+function ServiceMenuItem({label, icon}) {
   return (
     <button className={styles.menuItem}>
-      <span className={styles.iconPlaceholder}>ICON</span>
+        <div className={styles.iconPlaceholder}>
+        <img src={icon} alt={label} className={styles.image} />
+        </div>
       <span className={styles.label}>{label}</span>
     </button>
   );

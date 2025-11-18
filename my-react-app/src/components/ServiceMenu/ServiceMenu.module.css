@@ -15,7 +15,7 @@
 .menuItem {
   width: 100%;
   height: 144px; /* Figma 높이 */
-  background: #f4f4f4; /* Figma의 rgba(229, ...) */
+  background: #E5E5E5; /* Figma의 rgba(229, ...) */
   border-radius: 17px;
   border: none;
   cursor: pointer;
@@ -32,12 +32,12 @@
   background: #eaeaea;
 }
 
-.iconPlaceholder {
-  /* 아이콘 대신 임시 텍스트 */
-  font-size: 12px;
-  font-weight: 700;
-  color: #333;
-}
+/*.iconPlaceholder {*/
+/*  !* 아이콘 대신 임시 텍스트 *!*/
+/*  font-size: 12px;*/
+/*  font-weight: 700;*/
+/*  color: #333;*/
+/*}*/
 
 /* Figma의 '중고거래' (텍스트) */
 .label {
@@ -46,4 +46,19 @@
   font-size: 24px; /* Figma의 27px는 너무 커서 조절 */
   line-height: 33px;
   color: #000000;
+}
+
+.iconPlaceholder{
+    width: 28px;
+    height: 28px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 42px;
+}
+
+.iconImage{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }

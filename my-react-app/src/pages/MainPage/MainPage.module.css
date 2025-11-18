@@ -9,7 +9,7 @@
 .mainContent {
   width: 100%;
   /* Figma의 `background: #FEFEFE;` (거의 흰색) */
-  background: #fafafa; /* 구분을 위해 살짝 더 어둡게 */
+  background: #ffffff; /* 구분을 위해 살짝 더 어둡게 */
   padding: 40px 0;
 
   display: flex;

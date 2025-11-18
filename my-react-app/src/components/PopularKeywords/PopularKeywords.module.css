@@ -2,12 +2,13 @@
 .keywordsContainer {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 0px;
 }
 
 .title {
   font-family: 'Pretendard';
   font-weight: 300;
+    margin-top: 20px;
   font-size: 15px;
   color: #000000;
 }
@@ -15,11 +16,14 @@
 .keywordsList {
   display: flex;
   align-items: center;
+    margin-left: 10px;
   gap: 15px;
 }
 
 .keyword {
   font-family: 'Pretendard';
+    margin-top : 20px;
+
   font-weight: 500;
   font-size: 15px;
   color: #000000;
