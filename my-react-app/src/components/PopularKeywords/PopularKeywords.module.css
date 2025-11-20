@@ -2,27 +2,40 @@
 .keywordsContainer {
   display: flex;
   align-items: center;
+  max-width: 830px;
   gap: 0px;
+  overflow: hidden;
 }
 
 .title {
   font-family: 'Pretendard';
   font-weight: 300;
-    margin-top: 20px;
+  margin-top: 20px;
+  margin-left: 170px;
   font-size: 15px;
   color: #000000;
+  white-space: nowrap;
+  flex-shrink: 0;
+  margin-right: 5px;
 }
 
 .keywordsList {
   display: flex;
   align-items: center;
-    margin-left: 10px;
+  margin-left: 10px;
   gap: 15px;
+  overflow-x: auto;
+  white-space: nowrap;
+  -ms-overflow-style: none;
+}
+
+.keywordsList::-webkit-scrollbar {
+  display: none;
 }
 
 .keyword {
   font-family: 'Pretendard';
-    margin-top : 20px;
+  margin-top: 20px;
 
   font-weight: 500;
   font-size: 15px;
