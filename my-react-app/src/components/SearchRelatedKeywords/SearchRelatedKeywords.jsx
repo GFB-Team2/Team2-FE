@@ -1,27 +1,72 @@
-import styles from './SearchRelatedKeywords.module.css';
+import { useEffect, useState, useRef } from "react";
+import { useParams } from "react-router-dom";
+import styles from "./SearchResultPage.module.css";
 
-function SearchRelatedKeywords({ keyword }) {
-  const related = [
-    `${keyword} 청소`,
-    `${keyword} 설치`,
-    `${keyword} 이전설치`,
-    `${keyword} 중고`,
-    `${keyword} 고장`,
-  ];
+import TopBanner from "@/components/TopBanner/TopBanner.jsx";
+import SearchHeader from "@/components/SearchHeader/SearchHeader.jsx";
+import SearchFilterSidebar from "@/components/SearchFilterSidebar/SearchFilterSidebar.jsx";
+import ItemGrid from "@/components/ItemGrid/ItemGrid.jsx";
 
-  return (
-    <div className={styles.container}>
-      <span className={styles.title}>연관 검색어:</span>
+import { mockSearchItems } from "@/data/mockSearchItems";
 
-      <div className={styles.list}>
-        {related.map((r) => (
-          <a href={`/search/${r}`} key={r} className={styles.word}>
-            {r}
-          </a>
-        ))}
-      </div>
-    </div>
-  );
+function SearchResultPage() {
+    const { keyword } = useParams();
+
+    const [page, setPage] = useState(1);
+    const [items, setItems] = useState([]);
+    const observerRef = useRef(null);
+
+    const BATCH_SIZE = 100;
+
+    const loadMore = () => {
+        const filtered = mockSearchItems.filter((item) =>
+            item.title.includes(keyword)
+        );
+
+        const next = filtered.slice(0, page * BATCH_SIZE);
+
+        setItems(next);
+        setPage((prev) => prev + 1);
+    };
+
+    useEffect(() => {
+        setItems([]);
+        setPage(1);
+        loadMore();
+    }, [keyword]);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver((entries) => {
+            if (entries[0].isIntersecting) loadMore();
+        });
+
+        if (observerRef.current) observer.observe(observerRef.current);
+        return () => observer.disconnect();
+    }, []);
+
+    return (
+        <div className={styles.pageWrapper}>
+            {/* 상단 네비바 */}
+            <TopBanner />
+
+            {/* 검색 헤더 */}
+            <div className={styles.searchHeaderArea}>
+                <SearchHeader />
+            </div>
+
+            <div className={styles.layout}>
+                <SearchFilterSidebar />
+
+                <div className={styles.itemsSection}>
+                    <h2 className={styles.title}>“{keyword}” 검색 결과</h2>
+
+                    <ItemGrid items={items} />
+
+                    <div ref={observerRef} className={styles.observer}></div>
+                </div>
+            </div>
+        </div>
+    );
 }
 
-export default SearchRelatedKeywords;
+export default SearchResultPage;

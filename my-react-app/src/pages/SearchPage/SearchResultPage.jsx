@@ -1,13 +1,13 @@
-import { useEffect, useState, useRef } from 'react';
-import { useParams } from 'react-router-dom';
-import styles from './SearchResultPage.module.css';
+import { useEffect, useState, useRef } from "react";
+import { useParams } from "react-router-dom";
+import styles from "./SearchResultPage.module.css";
 
-import TopBanner from '@/components/TopBanner/TopBanner.jsx';
-import SearchHeader from '@/components/SearchHeader/SearchHeader.jsx';
-import SearchFilterSidebar from '@/components/SearchFilterSidebar/SearchFilterSidebar.jsx';
-import ItemGrid from '@/components/ItemGrid/ItemGrid.jsx';
+import TopBanner from "@/components/TopBanner/TopBanner.jsx";
+import SearchHeader from "@/components/SearchHeader/SearchHeader.jsx";
+import SearchFilterSidebar from "@/components/SearchFilterSidebar/SearchFilterSidebar.jsx";
+import ItemGrid from "@/components/ItemGrid/ItemGrid.jsx";
 
-import { mockSearchItems } from '@/data/mockSearchItems';
+import { mockSearchItems } from "@/data/mockSearchItems";
 
 function SearchResultPage() {
   const { keyword } = useParams();
@@ -16,15 +16,19 @@ function SearchResultPage() {
   const [items, setItems] = useState([]);
   const observerRef = useRef(null);
 
-  const BATCH_SIZE = 100;
+  const BATCH_SIZE = 40;
 
   const loadMore = () => {
-    const next = mockSearchItems.slice(0, page * BATCH_SIZE);
+    const filtered = mockSearchItems.filter((item) =>
+        item.title.includes(keyword)
+    );
+
+    const next = filtered.slice(0, page * BATCH_SIZE);
+
     setItems(next);
     setPage((prev) => prev + 1);
   };
 
-  //  keyword가 바뀌면 목록 초기화하고 새로 로드
   useEffect(() => {
     setItems([]);
     setPage(1);
@@ -37,8 +41,26 @@ function SearchResultPage() {
     });
 
     if (observerRef.current) observer.observe(observerRef.current);
+
     return () => observer.disconnect();
   }, []);
+
+  if (items.length === 0) {
+    return (
+        <div className={styles.pageWrapper}>
+          <TopBanner />
+
+          <div className={styles.searchHeaderArea}>
+            <SearchHeader />
+          </div>
+
+          <div className={styles.noResult}>
+            <h2>“{keyword}” 에 대한 검색결과가 없어요 </h2>
+            <p>다른 검색어를 입력해보세요!</p>
+          </div>
+        </div>
+    );
+  }
 
   return (
       <div className={styles.pageWrapper}>
