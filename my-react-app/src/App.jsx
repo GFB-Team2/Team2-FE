@@ -14,7 +14,7 @@ function App() {
           <Route path="/login" element={<LoginPage />} />
           <Route path="/signup" element={<SignUpPage />} />
           <Route path="/" element={<MainPage />} />
-          <Route path="/search" element={<SearchResultsPage />} />
+          <Route path="/search/:keyword" element={<SearchResultsPage />} />
           <Route path="/item/:id" element={<ItemDetailPage />} />
         </Routes>
       </BrowserRouter>

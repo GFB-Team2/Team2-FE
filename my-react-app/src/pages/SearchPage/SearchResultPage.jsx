@@ -18,15 +18,18 @@ function SearchResultPage() {
 
   const BATCH_SIZE = 100;
 
-  useEffect(() => {
-    loadMore();
-  }, []);
-
   const loadMore = () => {
     const next = mockSearchItems.slice(0, page * BATCH_SIZE);
     setItems(next);
     setPage((prev) => prev + 1);
   };
+
+  //  keyword가 바뀌면 목록 초기화하고 새로 로드
+  useEffect(() => {
+    setItems([]);
+    setPage(1);
+    loadMore();
+  }, [keyword]);
 
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
@@ -38,26 +41,25 @@ function SearchResultPage() {
   }, []);
 
   return (
-    <div className={styles.pageWrapper}>
-      <TopBanner />
+      <div className={styles.pageWrapper}>
+        <TopBanner />
 
-      {/* ⭐ 검색 페이지에서만 SearchHeader 레이아웃 적용하는 래퍼 */}
-      <div className={styles.searchHeaderArea}>
-        <SearchHeader />
-      </div>
+        <div className={styles.searchHeaderArea}>
+          <SearchHeader />
+        </div>
 
-      <div className={styles.layout}>
-        <SearchFilterSidebar />
+        <div className={styles.layout}>
+          <SearchFilterSidebar />
 
-        <div className={styles.itemsSection}>
-          <h2 className={styles.title}>“{keyword}” 검색 결과</h2>
+          <div className={styles.itemsSection}>
+            <h2 className={styles.title}>“{keyword}” 검색 결과</h2>
 
-          <ItemGrid items={items} />
+            <ItemGrid items={items} />
 
-          <div ref={observerRef} className={styles.observer}></div>
+            <div ref={observerRef} className={styles.observer}></div>
+          </div>
         </div>
       </div>
-    </div>
   );
 }
 
