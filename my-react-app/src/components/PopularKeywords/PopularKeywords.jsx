@@ -1,69 +1,74 @@
+// PopularKeywords.jsx
 import styles from './PopularKeywords.module.css';
 import { useParams, useLocation } from 'react-router-dom';
 
+// 자동완성 후보 단어 목록 (여기에 원하는 만큼 추가 가능)
+const autoCompleteWords = [
+    "에어컨",
+    "에어컨 청소",
+    "에어컨 설치",
+    "에어컨 이전설치",
+    "에어컨 부품",
+    "에어프라이어",
+    "에코백",
+    "에코백 중고",
+    "에이비씨",
+    "노트북",
+    "노트북 거치대",
+    "노트북 충전기",
+    "냉장고",
+    "난방용품",
+];
+
 const popular = [
-  '에어컨',
-  '에어컨청소',
-  '노트북',
-  '현대 중고차',
-  '이사짐 알바',
-  '근처 맛집',
-  '동네 친구',
-  '투표',
-  '난방',
-  '냉장고',
-  '컴퓨터',
-  '게임',
-  '청소기',
-  '패트',
-  '매트',
+    "에어컨",
+    "노트북",
+    "근처 맛집",
+    "중고 자전거",
+    "이사짐 알바",
+    "컴퓨터",
+    "청소기",
+    "게임",
 ];
 
 function PopularKeywords() {
-  const { keyword } = useParams();
-  const location = useLocation();
+    const { keyword } = useParams();
+    const location = useLocation();
 
-  const isSearchPage = location.pathname.startsWith('/search');
+    const isSearchPage = location.pathname.startsWith('/search');
 
-  // 검색 페이지라면 연관 검색어 생성
-  const related = keyword
-    ? [
-        `${keyword} 청소`,
-        `${keyword} 설치`,
-        `${keyword} 이전설치`,
-        `${keyword} 중고`,
-        `${keyword} 부품`,
-      ]
-    : [];
+    // prefix 매칭 기반 검색어 자동 추천
+    const related = keyword
+        ? autoCompleteWords.filter((word) =>
+            word.startsWith(keyword) // prefix match
+        )
+        : [];
 
-  return (
-    <div className={styles.keywordsContainer}>
-      {/* 제목 */}
+    return (
+        <div className={styles.keywordsContainer}>
       <span className={styles.title}>
         {isSearchPage ? '연관 검색어:' : '인기 검색어:'}
       </span>
 
-      {/* 검색 페이지 → 연관 검색어 */}
-      {isSearchPage && keyword ? (
-        <div className={styles.keywordsList}>
-          {related.map((word) => (
-            <a key={word} href={`/search/${word}`} className={styles.keyword}>
-              {word}
-            </a>
-          ))}
+            {isSearchPage ? (
+                <div className={styles.keywordsList}>
+                    {related.map((word) => (
+                        <a key={word} href={`/search/${word}`} className={styles.keyword}>
+                            {word}
+                        </a>
+                    ))}
+                </div>
+            ) : (
+                <div className={styles.keywordsList}>
+                    {popular.map((word) => (
+                        <a key={word} href={`/search/${word}`} className={styles.keyword}>
+                            {word}
+                        </a>
+                    ))}
+                </div>
+            )}
         </div>
-      ) : (
-        /* 메인 / 검색아닌 페이지 → 기존 인기 검색어 */
-        <div className={styles.keywordsList}>
-          {popular.map((word) => (
-            <a key={word} href={`/search/${word}`} className={styles.keyword}>
-              {word}
-            </a>
-          ))}
-        </div>
-      )}
-    </div>
-  );
+    );
 }
 
 export default PopularKeywords;

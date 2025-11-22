@@ -1,13 +1,13 @@
-import { useEffect, useState, useRef } from 'react';
-import { useParams } from 'react-router-dom';
-import styles from './SearchResultPage.module.css';
+import { useEffect, useState, useRef } from "react";
+import { useParams } from "react-router-dom";
+import styles from "./SearchResultPage.module.css";
 
-import TopBanner from '@/components/TopBanner/TopBanner.jsx';
-import SearchHeader from '@/components/SearchHeader/SearchHeader.jsx';
-import SearchFilterSidebar from '@/components/SearchFilterSidebar/SearchFilterSidebar.jsx';
-import ItemGrid from '@/components/ItemGrid/ItemGrid.jsx';
+import TopBanner from "@/components/TopBanner/TopBanner.jsx";
+import SearchHeader from "@/components/SearchHeader/SearchHeader.jsx";
+import SearchFilterSidebar from "@/components/SearchFilterSidebar/SearchFilterSidebar.jsx";
+import ItemGrid from "@/components/ItemGrid/ItemGrid.jsx";
 
-import { mockSearchItems } from '@/data/mockSearchItems';
+import { mockSearchItems } from "@/data/mockSearchItems";
 
 function SearchResultPage() {
   const { keyword } = useParams();
@@ -16,17 +16,24 @@ function SearchResultPage() {
   const [items, setItems] = useState([]);
   const observerRef = useRef(null);
 
-  const BATCH_SIZE = 100;
-
-  useEffect(() => {
-    loadMore();
-  }, []);
+  const BATCH_SIZE = 40;
 
   const loadMore = () => {
-    const next = mockSearchItems.slice(0, page * BATCH_SIZE);
+    const filtered = mockSearchItems.filter((item) =>
+        item.title.includes(keyword)
+    );
+
+    const next = filtered.slice(0, page * BATCH_SIZE);
+
     setItems(next);
     setPage((prev) => prev + 1);
   };
+
+  useEffect(() => {
+    setItems([]);
+    setPage(1);
+    loadMore();
+  }, [keyword]);
 
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
@@ -34,30 +41,47 @@ function SearchResultPage() {
     });
 
     if (observerRef.current) observer.observe(observerRef.current);
+
     return () => observer.disconnect();
   }, []);
 
+  if (items.length === 0) {
+    return (
+        <div className={styles.pageWrapper}>
+          <TopBanner />
+
+          <div className={styles.searchHeaderArea}>
+            <SearchHeader />
+          </div>
+
+          <div className={styles.noResult}>
+            <h2>“{keyword}” 에 대한 검색결과가 없어요 </h2>
+            <p>다른 검색어를 입력해보세요!</p>
+          </div>
+        </div>
+    );
+  }
+
   return (
-    <div className={styles.pageWrapper}>
-      <TopBanner />
+      <div className={styles.pageWrapper}>
+        <TopBanner />
 
-      {/* ⭐ 검색 페이지에서만 SearchHeader 레이아웃 적용하는 래퍼 */}
-      <div className={styles.searchHeaderArea}>
-        <SearchHeader />
-      </div>
+        <div className={styles.searchHeaderArea}>
+          <SearchHeader />
+        </div>
 
-      <div className={styles.layout}>
-        <SearchFilterSidebar />
+        <div className={styles.layout}>
+          <SearchFilterSidebar />
 
-        <div className={styles.itemsSection}>
-          <h2 className={styles.title}>“{keyword}” 검색 결과</h2>
+          <div className={styles.itemsSection}>
+            <h2 className={styles.title}>“{keyword}” 검색 결과</h2>
 
-          <ItemGrid items={items} />
+            <ItemGrid items={items} />
 
-          <div ref={observerRef} className={styles.observer}></div>
+            <div ref={observerRef} className={styles.observer}></div>
+          </div>
         </div>
       </div>
-    </div>
   );
 }
 
