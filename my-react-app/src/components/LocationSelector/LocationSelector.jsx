@@ -2,18 +2,18 @@ import styles from './LocationSelector.module.css';
 import { FiMapPin, FiChevronDown } from 'react-icons/fi';
 import { useState } from 'react';
 
-function LocationSelector() {
+function LocationSelector({currentLocation, onSelectLocation}) {
   const [isOpen, setIsOpen] = useState(false);
-  const [location, setLocation] = useState('정릉동');
+  // const [location, setLocation] = useState('정릉동');
 
-  const locationList = ['정릉동', '길음동', '돈암동', '장위동', '거제폭격기'];
+  const locationList = ['정릉동', '길음동', '돈암동', '장위동'];
 
   const toggleMenu = () => {
     setIsOpen((prev) => !prev);
   };
 
   const selectLocation = (location) => {
-    setLocation(location);
+    onSelectLocation(location);
     setIsOpen(false);
   };
 
@@ -21,7 +21,7 @@ function LocationSelector() {
     <div className={styles.container}>
       <button className={styles.locationButton} onClick={() => toggleMenu()}>
         <FiMapPin className={styles.icon} />
-        <span>{location}</span>
+        <span>{currentLocation}</span>
         <FiChevronDown className={isOpen ? styles.rotate : ''} />
       </button>
 

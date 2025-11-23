@@ -6,13 +6,13 @@ function SellerInfo({ seller }) {
   return (
     <div className={styles.sellerBox}>
       <div className={styles.top}>
-        <img src={seller.profile} className={styles.profileImg} />
+        <img src={seller.sellerProfileUrl} className={styles.profileImg} />
         <div>
-          <div className={styles.name}>{seller.name}</div>
-          <div className={styles.location}>{seller.location}</div>
+          <div className={styles.name}>{seller.sellerNickname}</div>
+          <div className={styles.location}>{seller.region}</div>
         </div>
 
-        <div className={styles.temperature}>{seller.temperature}</div>
+        <div className={styles.temperature}>{seller.sellerMannerTemp}</div>
       </div>
     </div>
   );

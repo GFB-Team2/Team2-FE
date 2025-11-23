@@ -20,31 +20,31 @@ function TopBanner() {
   };
 
   return (
-      <header className={styles.topBanner}>
-        <div className={styles.contentWrapper}>
-          <div className={styles.logoWrapper}>
-            <CarrotMarketLogo size="small" />
-          </div>
-
-          <div className={styles.buttonWrapper}>
-            {!isLoggedIn ? (
-                <Button onClick={() => navigate('/login')}>로그인</Button>
-            ) : (
-                <div className={styles.buttonGroup}>
-                  <Button
-                      onClick={handleMyPageClick}
-                      className={styles.myPageButton}
-                  >
-                    마이페이지
-                  </Button>
-                  <Button onClick={handleLogout} className={styles.logoutButton}>
-                    로그아웃
-                  </Button>
-                </div>
-            )}
-          </div>
+    <header className={styles.topBanner}>
+      <div className={styles.contentWrapper}>
+        <div className={styles.logoWrapper}>
+          <CarrotMarketLogo size="small" />
         </div>
-      </header>
+
+        <div className={styles.buttonWrapper}>
+          {!isLoggedIn ? (
+            <Button onClick={() => navigate('/login')}>로그인</Button>
+          ) : (
+            <div className={styles.buttonGroup}>
+              <Button
+                onClick={handleMyPageClick}
+                className={styles.myPageButton}
+              >
+                마이페이지
+              </Button>
+              <Button onClick={handleLogout} className={styles.logoutButton}>
+                로그아웃
+              </Button>
+            </div>
+          )}
+        </div>
+      </div>
+    </header>
   );
 }
 
