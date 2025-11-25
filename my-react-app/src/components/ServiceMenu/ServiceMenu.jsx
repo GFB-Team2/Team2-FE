@@ -7,6 +7,7 @@ import jungocar from '@/assets/images/jungocar.svg';
 import dongnaeupchae from '@/assets/images/dongnaeupchae.svg';
 import dongnaeseng from '@/assets/images/dongnaeseng.svg';
 import moim from '@/assets/images/moim.svg';
+import { useNavigate } from "react-router-dom";
 
 const services = [
   { id: 1, label: '중고거래', icon: jungogeore },
@@ -19,6 +20,13 @@ const services = [
 ];
 
 function ServiceMenu() {
+
+    const navigate = useNavigate();
+
+    const handleCategoryClick = (category) => {
+        navigate(`/search?categories=${encodeURIComponent(category)}`);
+    }
+
   return (
     <div className={styles.menuContainer}>
       {services.map((service) => (
@@ -26,6 +34,7 @@ function ServiceMenu() {
           key={service.id}
           label={service.label}
           icon={service.icon}
+          onClick = {() => handleCategoryClick(service.label)}
         />
       ))}
     </div>

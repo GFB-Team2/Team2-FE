@@ -3,7 +3,7 @@ import { FiSearch, FiChevronDown } from 'react-icons/fi';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-function SearchBar({region}) {
+function SearchBar({ region }) {
   const [isOpen, setIsOpen] = useState(false);
   const [category, setCategory] = useState('중고거래');
   const [keyword, setKeyword] = useState('');
@@ -21,8 +21,9 @@ function SearchBar({region}) {
 
   const handleSearch = () => {
     if (!keyword.trim()) return;
-    // navigate(`/search/${encodeURIComponent(keyword)}`);
-      navigate(`/search?keyword=${encodeURIComponent(keyword)}&categories=${encodeURIComponent(category)}&regions=${encodeURIComponent(region)}`);
+    navigate(
+      `/search?keyword=${encodeURIComponent(keyword)}&categories=${encodeURIComponent(category)}&regions=${encodeURIComponent(region)}`
+    );
   };
 
   return (

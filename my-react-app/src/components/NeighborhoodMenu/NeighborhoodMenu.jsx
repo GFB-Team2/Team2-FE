@@ -1,10 +1,11 @@
 import styles from './NeighborhoodMenu.module.css';
 import NeighborhoodButton from './NeighborhoodButton';
+import { useNavigate } from "react-router-dom";
 
 const neighborhoods = [
-  '송도동',
-  '역삼동',
-  '불금동',
+  '정릉동',
+  '길음동',
+  '장위동',
   '백암동',
   '서초동',
   '옥정동',
@@ -23,10 +24,18 @@ const neighborhoods = [
 ];
 
 function NeighborhoodMenu() {
+
+    const navigate = useNavigate();
+
+    const handleRegionSearch = (region) => {
+        const url = `/search?regions=${encodeURIComponent(region)}`;
+        navigate(url);
+    }
+
   return (
     <div className={styles.container}>
       {neighborhoods.map((name) => (
-        <NeighborhoodButton key={name}>{name}</NeighborhoodButton>
+        <NeighborhoodButton key={name} onClick = {() => handleRegionSearch(name)}>{name}</NeighborhoodButton>
       ))}
     </div>
   );
