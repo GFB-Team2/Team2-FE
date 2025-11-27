@@ -6,8 +6,7 @@ import PopularKeywords from '@/components/PopularKeywords/PopularKeywords.jsx';
 import { useState } from 'react';
 
 function SearchHeader({ layout = 'default', className = '' }) {
-
-    const [location, setLocation] = useState('정릉동');
+  const [location, setLocation] = useState('정릉동');
   return (
     <div
       className={`${layout === 'search' ? styles.searchHeaderSearchPage : styles.searchHeader} ${className}`}
@@ -15,9 +14,10 @@ function SearchHeader({ layout = 'default', className = '' }) {
       <div className={styles.inner}>
         <div className={styles.searchSection}>
           <LocationSelector
-          currentLocation={location}
-          onSelectLocation={setLocation}/>
-          <SearchBar region={location}/>
+            currentLocation={location}
+            onSelectLocation={setLocation}
+          />
+          <SearchBar region={location} />
         </div>
 
         <div className={styles.bottomSection}>

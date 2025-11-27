@@ -32,6 +32,7 @@
 }
 
 .noResult {
+  margin-left: 310px;
   text-align: center;
   padding: 120px 20px;
   color: #555;

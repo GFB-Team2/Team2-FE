@@ -2,7 +2,7 @@ import styles from './LocationSelector.module.css';
 import { FiMapPin, FiChevronDown } from 'react-icons/fi';
 import { useState } from 'react';
 
-function LocationSelector({currentLocation, onSelectLocation}) {
+function LocationSelector({ currentLocation, onSelectLocation }) {
   const [isOpen, setIsOpen] = useState(false);
   // const [location, setLocation] = useState('정릉동');
 
