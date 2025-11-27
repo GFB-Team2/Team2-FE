@@ -1,0 +1,33 @@
+.sellerBox {
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid #ddd;
+}
+
+.top {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.profileImg {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+}
+
+.name {
+  font-weight: 700;
+  color: black;
+}
+
+.location {
+  font-size: 14px;
+  color: #777;
+}
+
+.temperature {
+  margin-left: auto;
+  font-weight: 700;
+  color: #ff7800;
+}

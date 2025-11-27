@@ -1,0 +1,36 @@
+/* Figma의 'Frame 28' */
+.container {
+  width: 100%;
+  max-width: 1046px; /* Figma 너비 */
+  margin: 0 auto; /* 중앙 정렬 */
+  padding: 17px 50px;
+
+  /* ⭐️ Flexbox로 버튼들을 배치하되, 줄바꿈(wrap) 허용 */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+}
+
+/* Figma의 'Frame 29' (버튼 1개) */
+.button {
+  height: 39px;
+  /* width는 텍스트 길이에 따라 유연하게 (Figma의 고정 width: 76px 버림) */
+  padding: 10px 17px;
+
+  /* Figma의 gradient를 단순한 색으로 변경 */
+  background: #e5e5e5;
+  border-radius: 40px;
+  border: 1px solid #eaeaea;
+  cursor: pointer;
+
+  /* Figma의 '송도동' 텍스트 */
+  font-family: 'Pretendard';
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 19px;
+  color: #000000;
+}
+
+.button:hover {
+  background: #eaeaea;
+}

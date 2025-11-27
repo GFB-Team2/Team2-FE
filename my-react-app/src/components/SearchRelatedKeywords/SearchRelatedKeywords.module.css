@@ -1,0 +1,28 @@
+.container {
+  margin-top: 10px;
+  padding-left: 5px;
+}
+
+.title {
+  font-size: 14px;
+  color: #777;
+  margin-right: 10px;
+}
+
+.list {
+  display: inline-flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.word {
+  font-size: 14px;
+  color: #333;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.word:hover {
+  color: #ff8a3d;
+  text-decoration: underline;
+}

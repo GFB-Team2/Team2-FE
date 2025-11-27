@@ -1,0 +1,39 @@
+.pageContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background: #ffffff;
+}
+
+.mainContent {
+  width: 100%;
+
+  background: #ffffff;
+  padding: 40px 0;
+
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.writeButton {
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
+
+  padding: 15px 20px;
+  background-color: #ff8a3d;
+  color: white;
+  border: none;
+  border-radius: 40px;
+  font-size: 18px;
+  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  z-index: 99;
+  transition: background-color 0.2s;
+}
+
+.writeButton:hover {
+  background-color: #f77f24;
+}

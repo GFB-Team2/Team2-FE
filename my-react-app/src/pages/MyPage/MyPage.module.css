@@ -1,0 +1,123 @@
+.wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* 뒤로가기 버튼 */
+.backBtn {
+  background: none;
+  border: none;
+  font-size: 18px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  color: #555;
+}
+.backBtn:hover {
+  color: #ff8a3d;
+}
+
+/* 프로필 카드 */
+.profileCard {
+  display: flex;
+  align-items: center;
+  padding: 22px;
+  border-radius: 16px;
+  background: #fff4e6;
+  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.08);
+  margin-bottom: 26px;
+}
+
+.profileImg {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  margin-right: 18px;
+  object-fit: cover;
+}
+
+/* 프로필 정보 */
+.profileInfo {
+  flex: 1;
+}
+
+.nickname {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 6px;
+  color: #333;
+}
+
+.temperature {
+  color: #ff8a3d;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+/* 온도바 */
+.temperatureBar {
+  width: 100%;
+  height: 8px;
+  background: #ffe1c4;
+  border-radius: 10px;
+}
+
+.temperatureFill {
+  height: 100%;
+  background: #ff8a3d;
+  border-radius: 10px;
+}
+
+/* 판매 목록 */
+.sectionTitle {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+/* 카드 리스트 */
+.itemList {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* 개별 상품 카드 */
+.itemCard {
+  display: flex;
+  background: white;
+  border-radius: 12px;
+  padding: 14px;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+  transition: 0.15s ease;
+}
+
+.itemCard:hover {
+  transform: scale(1.01);
+}
+
+.itemImg {
+  width: 90px;
+  height: 90px;
+  border-radius: 8px;
+  margin-right: 16px;
+  object-fit: cover;
+}
+
+.itemInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.itemTitle {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.itemPrice {
+  font-size: 16px;
+  color: #666;
+}

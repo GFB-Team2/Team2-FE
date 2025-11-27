@@ -1,0 +1,50 @@
+.pageWrapper {
+  width: 100%;
+  min-height: 100vh;
+  background: #fff;
+}
+
+.searchHeaderArea {
+  margin-top: 20px;
+  padding: 0 20px;
+}
+
+.layout {
+  display: flex;
+  gap: 30px;
+  padding: 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.itemsSection {
+  flex: 1;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.observer {
+  height: 1px;
+}
+
+.noResult {
+  margin-left: 310px;
+  text-align: center;
+  padding: 120px 20px;
+  color: #555;
+}
+
+.noResult h2 {
+  font-size: 26px;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+.noResult p {
+  font-size: 16px;
+  color: #777;
+}
