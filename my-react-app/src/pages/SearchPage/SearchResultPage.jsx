@@ -108,24 +108,24 @@ function SearchResultPage() {
   const [loading, setLoading] = useState(true);
 
   const getPageTitle = () => {
-      if (keyword) {
-          return `"${keyword}" 검색 결과`;
-      }
-      if (category){
-          return `"${category}" 카테고리 매물`;
-      }
-      return '전체 상품 목록';
-  }
+    if (keyword) {
+      return `"${keyword}" 검색 결과`;
+    }
+    if (category) {
+      return `"${category}" 카테고리 매물`;
+    }
+    return '전체 상품 목록';
+  };
 
   const getNoResultMessage = () => {
-      if (category && !keyword) {
-          return `"${category}" 카테고리에 대한 검색결과가 없어요.`;
-      }
-      if (keyword) {
-          return `"${keyword}" 에 대한 검색결과가 없어요.`;
-      }
-      return `해당 조건에 맞는 상품이 없어요.`;
-  }
+    if (category && !keyword) {
+      return `"${category}" 카테고리에 대한 검색결과가 없어요.`;
+    }
+    if (keyword) {
+      return `"${keyword}" 에 대한 검색결과가 없어요.`;
+    }
+    return `해당 조건에 맞는 상품이 없어요.`;
+  };
 
   useEffect(() => {
     const fetchData = async () => {
@@ -179,7 +179,7 @@ function SearchResultPage() {
         <div className={styles.layout}>
           <SearchFilterSidebar />
           <div className={styles.noResult}>
-              <h2>{getNoResultMessage()}</h2>
+            <h2>{getNoResultMessage()}</h2>
             <p>동네를 변경하거나 다른 검색어를 입력해보세요!</p>
           </div>
         </div>
@@ -201,7 +201,7 @@ function SearchResultPage() {
         <div className={styles.itemsSection}>
           <h2 className={styles.title}>
             {/*“{keyword}” 검색 결과*/}
-              {getPageTitle()}
+            {getPageTitle()}
             {region && (
               <span
                 style={{ fontSize: '0.8em', color: '#888', marginLeft: '10px' }}

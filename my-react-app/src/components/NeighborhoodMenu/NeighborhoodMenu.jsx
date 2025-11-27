@@ -1,6 +1,6 @@
 import styles from './NeighborhoodMenu.module.css';
 import NeighborhoodButton from './NeighborhoodButton';
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
 
 const neighborhoods = [
   '정릉동',
@@ -24,18 +24,19 @@ const neighborhoods = [
 ];
 
 function NeighborhoodMenu() {
+  const navigate = useNavigate();
 
-    const navigate = useNavigate();
-
-    const handleRegionSearch = (region) => {
-        const url = `/search?regions=${encodeURIComponent(region)}`;
-        navigate(url);
-    }
+  const handleRegionSearch = (region) => {
+    const url = `/search?regions=${encodeURIComponent(region)}`;
+    navigate(url);
+  };
 
   return (
     <div className={styles.container}>
       {neighborhoods.map((name) => (
-        <NeighborhoodButton key={name} onClick = {() => handleRegionSearch(name)}>{name}</NeighborhoodButton>
+        <NeighborhoodButton key={name} onClick={() => handleRegionSearch(name)}>
+          {name}
+        </NeighborhoodButton>
       ))}
     </div>
   );

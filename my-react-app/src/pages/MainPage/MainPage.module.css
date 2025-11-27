@@ -2,17 +2,38 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  /* Figma의 `background: #FFFFFF;` */
   background: #ffffff;
 }
 
 .mainContent {
   width: 100%;
-  /* Figma의 `background: #FEFEFE;` (거의 흰색) */
-  background: #ffffff; /* 구분을 위해 살짝 더 어둡게 */
+
+  background: #ffffff;
   padding: 40px 0;
 
   display: flex;
   flex-direction: column;
-  gap: 30px; /* ServiceMenu와 NeighborhoodMenu 사이 간격 */
+  gap: 30px;
+}
+
+.writeButton {
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
+
+  padding: 15px 20px;
+  background-color: #ff8a3d;
+  color: white;
+  border: none;
+  border-radius: 40px;
+  font-size: 18px;
+  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  z-index: 99;
+  transition: background-color 0.2s;
+}
+
+.writeButton:hover {
+  background-color: #f77f24;
 }

@@ -36,3 +36,21 @@ export async function getItemDetail(itemId) {
 
   return json.data;
 }
+
+export async function createItemApi(formData) {
+  const response = await fetch(`${ITEM_BASE_URL}`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    credentials: 'include',
+    body: JSON.stringify(formData),
+  });
+
+  const json = await response.json();
+
+  if (!json.result) {
+    throw new Error(json.message || '상품 등록에 실패했습니다.');
+  }
+  return json.data;
+}

@@ -1,0 +1,102 @@
+/* CreatePostModal.module.css */
+
+/* 1. 모달 외부 배경 */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* 반투명 배경 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000; /* 모든 요소 위에 뜨도록 */
+}
+
+/* 2. 모달 내용물: 로그인 박스 디자인 재사용 */
+.modalContent {
+  background-color: white;
+  border-radius: 12px;
+  max-width: 550px; /* 로그인 박스보다 조금 넓게 */
+  width: 90%;
+  padding: 40px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* 3. 로그인/회원가입 스타일 재사용 (Typography) */
+.title {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+.subtitle {
+  font-size: 16px;
+  color: #777;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+/* 4. 폼 요소 스타일 */
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+  margin-top: 15px;
+  margin-bottom: 5px;
+}
+
+/* 5. Textarea 스타일 (CustomInput과 구분) */
+.textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-family: 'Pretendard', sans-serif;
+  font-size: 16px;
+  resize: vertical; /* 수직 크기 조절만 허용 */
+}
+
+/* 6. Select 박스 그룹 */
+.selectGroup {
+  display: flex;
+  gap: 15px;
+}
+
+.select {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+  height: 45px;
+}
+
+/* 7. 버튼 그룹 (취소 / 등록) */
+.buttonWrapper {
+  display: flex;
+  justify-content: flex-end; /* 오른쪽 정렬 */
+  gap: 10px;
+  margin-top: 30px;
+}
+
+.cancelBtn {
+  background-color: #e9ecef;
+  color: #495057;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.15s;
+}
+
+.submitBtn {
+}

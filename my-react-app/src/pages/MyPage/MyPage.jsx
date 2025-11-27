@@ -139,11 +139,7 @@ function MyPage() {
         </button>
 
         <div className={styles.profileCard}>
-          <img
-            src={userInfo.profileUrl}
-            className={styles.profileImg}
-            alt="프로필"
-          />
+          <img src={userInfo.profileUrl} className={styles.profileImg} alt="" />
 
           <div className={styles.profileInfo}>
             <h2 className={styles.nickname}>{userInfo.nickname}</h2>
